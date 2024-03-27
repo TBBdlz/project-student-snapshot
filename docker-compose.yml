@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    nginx:
+        build:
+            context: ./frontend # this is comment
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        image: test-nginx-server
+    flask-nlp:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - 7777:5000
